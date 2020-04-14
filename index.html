@@ -34,16 +34,16 @@
 									<p>Here we have 2 graphs. First, the confirmed positive cases over time, then, the confirmed deaths over time. These are interactive plots you can play with! </p>
                                 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/positivextime.html" height="800" width="100%"></iframe>
                                 
-                                 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/deathxtime" height="525" width="100%"></iframe>
+                                 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/deathxtime" height="800" width="100%"></iframe>
                                 
 
                                 
 									<p>Next we look at confirmed deaths over time in a semilog axis to get an idea of the growth rate among the states. The virus spreads in an exponential manner and we can see this is the case at the height of the outbreak (linear fit in a semilog plot). </p>
-                                 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/deathxtimesemilog" height="525" width="100%"></iframe>
+                                 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/deathxtimesemilog" height="800" width="100%"></iframe>
 
 									<p>As a fermentation scientist I am interested in how to quantify this growth rate since we work with microorganisms and microorganisms are VERY good at growing exponentially. I will fit into a basic exponential growth equation:  A*exp(mu*t) + C. This was done using SciPy.optimize. Using this equation we can get mu value, a quantity for growth rate. For now I will focus on the 10 states with the highest amount of cases. The fit is done for each of these 10 states from the first day there are 10 or more confirmed deaths and the 10 days following. </p>
                                 
-                                 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/mufit10.html" height="525" width="100%"></iframe>
+                                 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/mufit10.html" height="800" width="100%"></iframe>
                                 
 									<p>Upon further analysis it is apparent that the growth rate is at its peak in the first week or so and quickly declines. As such the growth rate is not that useful past the initial phases but it can give a quantitave indication of how fast the outbreak happened in certain states (like NY, NJ) </p>   
                                 
