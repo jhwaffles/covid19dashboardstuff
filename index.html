@@ -29,9 +29,9 @@
 
 								<!-- Text stuff -->
 									<h2>Background</h2>
-									<p>This page contains and assortment of plots and analysis using up-to-date COVID19 data in USA. It is meant to be a personal project to practice and showcase skills (python, pandas, plotly, and some basic html) on real data. Data is provided from https://www.kaggle.com/sudalairajkumar/covid19-in-usa. I use pandas to clean up and arrange the dataframe and plotly to make the interactive graphs. </p>
+									<p>This page contains and assortment of plots and analysis using up-to-date COVID19 data in USA. It is meant to be a personal project to practice and showcase skills (python, pandas, plotly, and some basic html) on real data. Data is provided from https://www.kaggle.com/sudalairajkumar/covid19-in-usa. I use pandas module to clean up and arrange the dataframe and plotly module to make the interactive graphs. </p>
 									<h2>Graphs and Analysis</h2>
-									<p>Here we have 2 graphs. First, the confirmed positive cases over time, then, the confirmed deaths over time. These are interactive plots you can play with! </p>
+									<p>Here we have 2 graphs. First, the confirmed positive cases over time, then, the confirmed deaths over time. These are interactive plots where you can select states. </p>
                                 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/positivextime.html" height="800" width="100%"></iframe>
                                 
                                  <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/deathxtime" height="800" width="100%"></iframe>
@@ -41,7 +41,7 @@
 									<p>Next we look at confirmed deaths over time in a semilog axis to get an idea of the growth rate among the states. The virus spreads in an exponential manner and we can see this is the case at the height of the outbreak (linear fit in a semilog plot). </p>
                                  <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/deathxtimesemilog" height="800" width="100%"></iframe>
 
-									<p>As a fermentation scientist I am interested in how to quantify this growth rate since we work with microorganisms and microorganisms are VERY good at growing exponentially. I will fit into a basic exponential growth equation:  A*exp(mu*t) + C. This was done using SciPy.optimize. Using this equation we can get mu value, a quantity for growth rate. For now I will focus on the 10 states with the highest amount of cases. The fit is done for each of these 10 states from the first day there are 10 or more confirmed deaths and the 10 days following. </p>
+									<p>As a fermentation scientist I am interested in quantifying this growth rate. In my field the microorganisms we work with are VERY good at growing exponentially. I fit into a basic exponential growth equation:  A*exp(mu*t) + C. This was done using SciPy.optimize. Using this equation we can get mu value, a quantity for growth rate. For now I will focus on the 10 states with the highest amount of cases. The fit is done for each of these 10 states from the first day there are 10 or more confirmed deaths and the 10 days following. </p>
                                 
                                  <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/mufit10.html" height="800" width="100%"></iframe>
                                 
@@ -50,24 +50,46 @@
 									<p>Here are geographical plots of calculated growth rates for each state from the same analysis.  </p>
                                  <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/mubystate.html" height="525" width="100%"></iframe>
                                 
-									<p>We should also be interested in seeing how much of the population has been tested by state. 
+									<p>We should also be interested in seeing how much of the population has been tested by state. As a whole the U.S. is looking much better than it was a month ago but still pales in comparison to the countries such as Germany, Spain, Italy, Switzerland, Norway who have tested close to 2% of their population. Also the ramp up in response was much slower than countries such as (South Korea). Another visualization could capture this.</p>
                                 
                                  <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/percenttestedstate.html" height="525" width="100%"></iframe>
                                         
-									<p>How does the hospital load (Hospitalized and in ICU) look for the top states? The salmon highlight represents the dates of stay at home orders. Are we flattening the curve enough?
-                                 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/flattenthecurve2CA.html" height="525" width="100%"></iframe>
-                                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/flattenthecurve2NY.html" height="525" width="100%"></iframe>
+									<p>With all the talk about social distancing and #flattenthecurve, how do the curves actually look? How does the hospital load (Hospitalized and in ICU) look for the top states? The salmon highlight represents the dates of stay at home orders. </p>
                                         
-									<p>How do the number of new deaths look? Which states are still climbing and which states have peaked?
+                                 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/flattenthecurve2LA.html" height="525" width="100%"></iframe>
+                                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/flattenthecurve2MI.html" height="525" width="100%"></iframe>
+                                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/flattenthecurve2GA.html" height="525" width="100%"></iframe>                                                                 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/flattenthecurve2IL.html" height="525" width="100%"></iframe>               
+                                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/flattenthecurve2WA.html" height="525" width="100%"></iframe>                                                                 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/flattenthecurve2NY.html" height="525" width="100%"></iframe>
+                                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/flattenthecurve2OK.html" height="525" width="100%"></iframe>
+                                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/flattenthecurve2OR.html" height="525" width="100%"></iframe>
+                                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/flattenthecurve2CA.html" height="525" width="100%"></iframe>
+                                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/flattenthecurve2NJ.html" height="525" width="100%"></iframe>
+                                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/flattenthecurve2RI.html" height="525" width="100%"></iframe> 
+                                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/flattenthecurve2MN.html" height="525" width="100%"></iframe>  
                                         
-                                 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/deathspercapitaCA.html" height="525" width="100%"></iframe>
-                                                                         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/deathspercapitaNY.html" height="525" width="100%"></iframe>
+									<p>It seems like the number of active hospitalizations and ICU patients is indeed coming down for NY and potentially for CA. What about the other states?</p>
                                         
-									<p>More analysis/insights to come! 
+									<p>It is also important to track the daily deaths per states. Which states are still climbing and which states have peaked?</p>
                                         
-									<p>Last updated 01:56 4/14/2020 </p>
+                                 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/deathspercapitaLA.html" height="525" width="100%"></iframe>
+                                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/deathspercapitaMI.html" height="525" width="100%"></iframe>
+                                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/deathspercapitaGA.html" height="525" width="100%"></iframe>                                                                 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/deathspercapitaIL.html" height="525" width="100%"></iframe>               
+                                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/deathspercapitaWA.html" height="525" width="100%"></iframe>                                                                 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/deathspercapitaNY.html" height="525" width="100%"></iframe>
+                                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/deathspercapitaOK.html" height="525" width="100%"></iframe>
+                                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/deathspercapitaOR.html" height="525" width="100%"></iframe>
+                                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/deathspercapitaCA.html" height="525" width="100%"></iframe>
+                                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/deathspercapitaNJ.html" height="525" width="100%"></iframe>
+                                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/deathspercapitaRI.html" height="525" width="100%"></iframe> 
+                                        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/deathspercapitaMN.html" height="525" width="100%"></iframe> 
                                         
+									<p>It will be interesting to monitor these graphs over time. As stay at home orders are relaxed in certain states it will be interesting to see how the number of hospitalizations and daily deaths respond. We could see second waves coming in states that lift regulations too soon. In fact there is historical data from the 1918 Spanish Flu that supports this and we can learn from this.</p>
+ <a href="https://www.nationalgeographic.com/history/2020/03/how-cities-flattened-curve-1918-spanish-flu-pandemic-coronavirus/"> See here</a> 
+                                           
+                                        
+									<p>Last updated 01:55 4/21/2020 PT</p>
 
+                                        
+<a href="https://www.linkedin.com/in/justin-huang-6a10782b/">A project by Justin Huang</a>
 
 	</body>
 </html>
