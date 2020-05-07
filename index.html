@@ -31,53 +31,44 @@
 									<h2>Background</h2>
 									<p>This page contains and assortment of plots and analysis using up-to-date COVID19 data in USA. It is meant to be a personal project to practice and showcase skills (python, pandas, plotly, matplotlib, and some basic html) on real data. Data is sourced from https://covidtracking.com. I use pandas module to clean up and arrange the dataframe and plotly/matplotlib modules to make the interactive graphs. </p>
 									<h2>Graphs and Analysis</h2>
-									<p>Firstly, two basic graphs - the confirmed positive covid19 cases over time, then, the confirmed covid19-related deaths over time. These are interactive plots where you can select states. Top 12 states in terms of positive cases are shown. </p>
+									<p>Firstly, two basic graphs - the confirmed positive covid19 cases over time, then, the confirmed covid19-related deaths over time. These are interactive plots where you can select states.  </p>
                                 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/positivextime.html" height="800" width="100%"></iframe>
                                 
                                  <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/deathxtime" height="800" width="100%"></iframe>
                                 
 
                                 
-									<p>Next, confirmed deaths are plotted over time in a semilog plot. The virus spreads in an exponential manner and we can see this is the case at the height of the outbreak (linear fit in a semilog plot). </p>
+									<p>Next, confirmed positive cases and deaths are plotted over time in a semilog plot. </p>
                                 
+                                
+                                 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/positivextimesemilog" height="800" width="100%"></iframe>
+
                                  <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/deathxtimesemilog" height="800" width="100%"></iframe>
 
-									<p>As a fermentation scientist I am interested in quantifying this growth rate. In my field the microorganisms we work with are VERY good at growing exponentially. I fit into a basic exponential growth equation:  A*exp(mu*t) + C. This was done using SciPy.optimize. Using this equation we can get mu value, a quantity for growth rate. For now I will focus on the 10 states with the highest amount of cases. The fit is done for each of these 10 states from the first day there are 10 or more confirmed deaths and the 10 days following. </p>
-                                
-                                 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/mufit10.html" height="800" width="100%"></iframe>
-                                
-									<p>Upon further analysis it is apparent that the growth rate is at its peak in the first week or so and quickly declines. As such the growth rate is not that useful past the initial phases but it can give a quantitave indication of how fast the outbreak happened in certain states (like NY, NJ) </p>   
-                                
-									<p>Here is a geographical representation of calculated growth rates for each state from the same analysis.  </p>
-                                 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/mubystate.html" height="525" width="100%"></iframe>
-                                
-									<p>We should also be interested in seeing how much of the population has been tested by state. As a whole the U.S. has scaled up its testing and has tested roughly 1.8% of the total population. (As of late April). </p>
+									<p>We should also be interested in seeing how much of the population has been tested by state. (As of early May). </p>
                                 
                                  <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/percenttestedstate.html" height="525" width="100%"></iframe>
                                         
-									<p>With all the talk about social distancing and #flattenthecurve, how does the hospital load (Hospitalized and in ICU) look for the states? The highlighted region represents dates of active stay at home orders.  </p>
+									<p>With all the talk about social distancing and #flattenthecurve, how does the current hospital load (Hospitalized and in ICU) look for the states? Here is a look at the curves for each individual state, grouped by states with the most # of current hospitalized. The highlighted region represents dates of active stay at home orders.  </p>
                                         
 <img src="https://jhwaffles.github.io/covid19dashboardstuff/flattenthecurve.png" alt="HTML5 Icon" style="width:1008px;height:3024px">
 
                                         
-									<p>Current covid19-related hospitalization numbers and patients in ICU are available across states. The highlighted region represents active stay at home orders. At this point in time (Late April) it seems overall the number of hospitalizations and patients in ICU has flattened out or is starting to come down. This is apparent in the initial hard-hit states such as New York, New Jersey, California. These numbers are still on the rise for states earlier in the curve, particularly in some of midwest states such as Arkansas, Iowa, Minnesota. </p>
+									<p>Current covid19-related hospitalization numbers and patients in ICU are available across states. The highlighted region represents active stay at home orders. At this point in time (Early May) it seems overall the number of hospitalizations and patients in ICU has flattened out or is starting to come down. This is apparent in the initial hard-hit states such as New York, New Jersey, California. These numbers are still on the rise for states earlier in the curve, particularly in some of midwest states such as Arkansas, Iowa, Minnesota. </p>
                                         
-									<p>A comparison of daily covid19 deaths for each state is available. I chose to normalize to daily deaths per capita to better compare across states. </p>
+									<p>A comparison of daily covid19 deaths for each state is available. I chose to normalize to daily deaths per capita to better compare across states. fA 7 day moving average is added to smooth out the fluctuations seen. We can see period spikes in reporting (most likely due to 'catch up' in reporting) </p>
                                         
 <img src="https://jhwaffles.github.io/covid19dashboardstuff/deathspercapita.png" alt="HTML5 Icon" style="width:1008px;height:3024px">
                                                                 
  
                                         
-									<p> (Late April) It will be interesting to see how these graphs develop over time. As stay at home orders are relaxed in certain states it will be interesting to see how the number of hospitalizations and daily deaths diverge. We could see second waves coming in states that lift regulations too soon. In fact there is historical data from the 1918 Spanish Flu that supports this and we can learn from this.</p> <a href="https://www.nationalgeographic.com/history/2020/03/how-cities-flattened-curve-1918-spanish-flu-pandemic-coronavirus/"> See here</a> 
+									<p> (Early May) It will be interesting to see how these graphs develop over time. As stay at home orders are relaxed in certain states it will be interesting to see how the number of hospitalizations and daily deaths diverge. We could see second waves coming in states that lift regulations too soon. In fact there is historical data from the 1918 Spanish Flu that supports this and we can learn from this.</p> <a href="https://www.nationalgeographic.com/history/2020/03/how-cities-flattened-curve-1918-spanish-flu-pandemic-coronavirus/"> See here</a> 
                                 
-									<p>I was interested in seeing how states are doing in terms of testing and made a visualization of percentage of positives/tests versus percentage of population tested. It is obvious that the hardest hit states (NY, NJ) have the highest percentage of tests coming out positive (over 40% at one point). CT, MI, MA, DC also have a moderate percentage of tests coming out positive (Over 20%). It is also interesting to see a curve for some states and a flat line for others.  </p>                                
+									<p>I was interested in seeing how states are doing in terms of testing and made a visualization of percentage of positives/tests versus percentage of population tested over time. It is obvious that the hardest hit states (NY, NJ) have the highest percentage of tests coming out positive (over 40% at one point). CT, MI, MA, DC also have a moderate percentage of tests coming out positive (Over 20%). It is also interesting to see a curve for some states and a flat line for others.  </p>                                
                                 
- <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/percentpositivepercenttested.html" height="800" width="100%"></iframe>  
-<p>I made another visualization of the percentage of deaths/positives versus percentage of population tested in order to gain some more insight. Is there some separation in states which are doing 'good' or 'bad' in terms of testing? These are hard questions to answer and strong conclusions can not be made based on this data alone due to differences in testing, reporting, etc. However we can see there are certain states (MI, MN, CT, LA) where over 6% of positive cases lead to deaths. This could suggest that these states, relative to other states, have a lot more undetected positives if we assume the mortality rate (# deaths/confirmed positives) is constant. It is certainly worrisome that lines are still rising for many states and this highlights we do not have this pandemic under control (yet). </p>
-                                
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/percentdeathpercenttested.html" height="800" width="100%"></iframe>
+ <img src="https://jhwaffles.github.io/covid19dashboardstuff/positiveovertestedperweek.png" alt="HTML5 Icon" style="width:1008px;height:3024px">
 
-                                									<p>Same data plotted with the final timepoint and state labels. </p>
+                                									<p>An alternative visualization of current percentage of positives/tested with state labels. </p>
                                 
 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/percentdeathpercenttested3bubble.html" height="800" width="100%"></iframe>
                                            
