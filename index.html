@@ -29,7 +29,7 @@
 
 								<!-- Text stuff -->
 									<h2>Background</h2>
-									<p>This page contains and assortment of plots and analysis using up-to-date COVID19 data in USA. It is meant to be a personal project to practice and showcase skills (python, pandas, plotly, matplotlib, and some basic html) on real data. Data is sourced from https://covidtracking.com. I use pandas module to clean up and arrange the dataframe and plotly/matplotlib modules to make the interactive graphs. </p>
+									<p>This page contains and assortment of plots and analysis using up-to-date COVID19 data in USA. It is meant to be a personal project to practice and showcase skills (python, pandas, plotly, matplotlib, and some basic html) on current data. Data is sourced from https://covidtracking.com. I use pandas module to clean up and arrange the dataframe and plotly/matplotlib modules to make the interactive graphs. </p>
 									<h2>Graphs and Analysis</h2>
 									<p>Firstly, two basic graphs - the confirmed positive covid19 cases over time, then, the confirmed covid19-related deaths over time. These are interactive plots where you can select states.  </p>
                                 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/positivextime.html" height="800" width="100%"></iframe>
@@ -56,22 +56,27 @@
                                         
 									<p> Current covid19-related hospitalization numbers and patients in ICU are available across states. The highlighted region represents active stay at home orders.  </p>
 
+                                
+									<p>  As of early November, we are seeing some worrying trends. Hospitalization and ICU numbers are increasing in several states comparable to their previous highs. </p>
+                                
 									<p>  As of early July a few states, we are seeing some worrying trends. Hospitalization numbers are increasing in many states, notably, TX CA AZ GA amongst others. ICUS numbers are following hospitalization numbers. In FL it is known cases and hospitalizations are surging yet the data is not reported in tihs source. </p>
                                 
 									<p>  As of mid June a few states, AR, AZ, NC, TX stand out as haivng hospitalizatoin counts trending upwards.   </p>
                                
                                         
-									<p>A comparison of daily covid19 deaths for each state is available. I chose to normalize to daily deaths per capita to better compare across states. A 7 day moving average is applied to smooth out the fluctuations seen. We can see period spikes in reporting (most likely due to 'catch up' in reporting) </p>
+									<p>A comparison of daily covid19 deaths for each state is available. I chose to normalize to daily deaths per 1 million people to better compare across states. A 7 day moving average is applied to smooth out the fluctuations seen. We can see periodic spikes due to weekend reporting </p>
                                         
 <img src="https://jhwaffles.github.io/covid19dashboardstuff/deathspercapita.png" alt="HTML5 Icon" style="width:1008px;height:3024px">
-                                        
+                                      
+									<p>As of early November I expect these to follow the rise in hospitalization/ICUS given the known trailing time of roughly 2 weeks. Hopefully hospital systems are better equipped to deal with the rising hospitalizations given time/resources/experience. </p>
+                                
 									<p>Early July - as in the earlier charts there are worrying trends although they are not as apparent yet. It may take longer for surge/increase in deaths to manifest in these graphs as they typically trail hospitalizations/ICUS by about 2 weeks. </p>    
                                 
 									<p>As of mid June one clear takeaway for me is that we are not done with the first wave. Numbers look pretty flat across the board.  </p> 
                                         
 									<p>From early May:  It will be interesting to see how these graphs develop over time. As stay at home orders are relaxed in certain states it will be interesting to see if and how the number of hospitalizations and daily deaths diverge. This will depend on many things such as travel between states opening up. We could see second waves coming in states that lift regulations too soon. In fact there is historical data from the 1918 Spanish Flu that supports this and we can learn from this.</p> <a href="https://www.nationalgeographic.com/history/2020/03/how-cities-flattened-curve-1918-spanish-flu-pandemic-coronavirus/"> See here</a> 
                                 
-									<p>I was interested in seeing how states are doing in terms of testing and made a visualization of cumulative test positive rate (green bars) versus percentage of population tested (black line) over time. Overall what we want to see a a decrease in the green bars with a steady increase in the black line to signal the percentage of potentially infectious is decreasing. 
+									<p>I was interested in seeing how states are doing in terms of testing and made a visualization of cumulative test positive rate (green bars) versus daily tests (black line) over time. Overall what we want to see a decrease in the green bars with a high amount of testing to signal the percentage of potentially infectious is decreasing. 
 </p>                                
                                 
  <img src="https://jhwaffles.github.io/covid19dashboardstuff/positiveovertestedperweek.png" alt="HTML5 Icon" style="width:1008px;height:3024px">
@@ -80,7 +85,7 @@
                                 
 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/percentpositivebubble.html" height="800" width="100%"></iframe>
                                            
-<p>Taking a look at New York individually I wanted to see how numbers looked per county. Data is sourced from https://github.com/nytimes/covid-19-data. Below is a visualization. Note: The data for 5 counties (Queens, Kings, Richmond, Bronx, and New York City) were lumped into one county of New York City.  </p>
+<p>From July - Taking a look at New York individually I wanted to see how numbers looked per county. Data is sourced from https://github.com/nytimes/covid-19-data. Below is a visualization. Note: The data for 5 counties (Queens, Kings, Richmond, Bronx, and New York City) were lumped into one county of New York City.  </p>
 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/NYcasesbycounty.html" height="800" width="100%"></iframe>
 
 <p>I wanted to see what trends are present when looking at the number of deaths versus population density of individual counties. Data was graphed on a log-log basis due to orders of magnitude difference in the numbers for new york city compared to other counties. </p>
@@ -89,7 +94,7 @@
 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://jhwaffles.github.io/covid19dashboardstuff/NYdeathspercapitadensity.html" height="800" width="100%"></iframe>  
                                                             
                                 
-									<p>Last updated 08:30 7/09/2020 PT</p>
+									<p>Last updated 11/09/2020 PT</p>
 
                                         
 <a href="https://www.linkedin.com/in/justin-huang-6a10782b/">A project by Justin Huang</a>
